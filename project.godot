@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="godot-2d-template"
+run/main_scene="uid://dfn6sijy2qq8n"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=425
-window/size/viewport_height=240
 window/stretch/mode="canvas_items"
+window/stretch/scale=2.0
 window/stretch/scale_mode="integer"
 
 [rendering]
