@@ -1,1 +1,22 @@
 # godot-2d-template
+
+This is a template for quickly starting a Godot 2D project in a game jam.
+Replace this README with a description of the jam it's being used for and the game.
+
+It assumes that you'll be working with 2D pixel art
+- Scale Mode is set to integer
+- Handles resizing.
+- Default resolution is 425 x 240
+
+## Planned features
+- HTML5 export
+- Itch.io upload script
+- SceneManager
+- AudioManager
+- GlobalSignals
+- Default UI Theme
+- Main Menu Scene
+- Options Scene
+- Game Scene
+	- HUD
+	- Pause 
