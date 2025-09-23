@@ -13,6 +13,10 @@ config_version=5
 config/name="godot-2d-template"
 run/main_scene="uid://dfn6sijy2qq8n"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://4iakeclf4k4b"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,8 +25,11 @@ DataStore="*res://utils/config/data_store.gd"
 
 [display]
 
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
-window/stretch/scale=2.0
 window/stretch/scale_mode="integer"
 
 [rendering]
