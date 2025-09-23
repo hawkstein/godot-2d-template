@@ -64,3 +64,8 @@ text = "Continue"
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits
+"
