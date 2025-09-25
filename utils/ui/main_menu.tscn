@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfn6sijy2qq8n"]
+[gd_scene load_steps=4 format=3 uid="uid://dfn6sijy2qq8n"]
 
 [ext_resource type="Texture2D" uid="uid://4iakeclf4k4b" path="res://utils/ui/menu-header.png" id="1_1anft"]
 [ext_resource type="Script" uid="uid://dqn7tfj4acgyi" path="res://utils/ui/main_menu.gd" id="1_wyq4t"]
+[ext_resource type="Theme" uid="uid://bes7poiouimn8" path="res://utils/ui/default_theme.tres" id="1_xp5nu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_xp5nu")
 script = ExtResource("1_wyq4t")
 metadata/_edit_lock_ = true
 
@@ -50,6 +52,7 @@ stretch_mode = 3
 
 [node name="InstructionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.63969857, 0.98767596, 0.37410963, 1)
 text = "Instructions"
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
