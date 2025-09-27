@@ -1,8 +1,8 @@
 extends Node
 
-@export var screens:Dictionary[String, PackedScene] = {}
+@export var screens:Dictionary[StringName, PackedScene] = {}
 
-func change_to(key:String) -> void:
+func change_to(key:StringName) -> void:
 	if not screens.has(key):
 		push_warning("Key does not exist: ", key)
 		return
@@ -11,7 +11,7 @@ func change_to(key:String) -> void:
 		return
 	call_deferred("_deferred_change_to", key)
 
-func _deferred_change_to(key:String) -> void:
+func _deferred_change_to(key:StringName) -> void:
 	await Fade.fade_out().finished
 	get_tree().change_scene_to_packed(screens[key])
 	Fade.fade_in()
