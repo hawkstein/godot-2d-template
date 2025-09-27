@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DataStore="*res://utils/config/data_store.gd"
+ScreenChanger="*res://utils/screen_changer.tscn"
 
 [display]
 

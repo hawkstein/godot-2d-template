@@ -72,3 +72,5 @@ text = "Options"
 layout_mode = 2
 text = "Credits
 "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

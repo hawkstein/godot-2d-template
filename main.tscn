@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://vck4bl5wwflb"]
+[gd_scene load_steps=2 format=3 uid="uid://vck4bl5wwflb"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://j3e3l0qkph8h" path="res://entities/Ore.png" id="1_ig7tw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="OreSprite" type="Sprite2D" parent="."]
+position = Vector2(477, 253)
+texture = ExtResource("1_ig7tw")
+
+[node name="OreSprite2" type="Sprite2D" parent="."]
+position = Vector2(946, 529)
+texture = ExtResource("1_ig7tw")
+
+[node name="OreSprite3" type="Sprite2D" parent="."]
+position = Vector2(10, 528)
+texture = ExtResource("1_ig7tw")
+
+[node name="OreSprite4" type="Sprite2D" parent="."]
+position = Vector2(14, 15)
+texture = ExtResource("1_ig7tw")
+
+[node name="OreSprite5" type="Sprite2D" parent="."]
+position = Vector2(949, 15)
+texture = ExtResource("1_ig7tw")
