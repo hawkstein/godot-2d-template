@@ -8,10 +8,13 @@ It assumes that you'll be working with 2D pixel art:
 - Handles resizing
 - Default resolution is 425 x 240
 
-## Planned features
+## Features
 - HTML5 export
+- ScreenChanger. Add scenes in the IDE to the autoload scene with a key and then use `ScreenChanger.change_to(key)`
+
+## Planned features
+
 - Itch.io upload script
-- SceneManager
 - AudioManager
 - GlobalSignals
 - Default UI Theme
