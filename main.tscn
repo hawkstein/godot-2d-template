@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vck4bl5wwflb"]
+[gd_scene load_steps=3 format=3 uid="uid://vck4bl5wwflb"]
 
 [ext_resource type="Texture2D" uid="uid://j3e3l0qkph8h" path="res://entities/Ore.png" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://cbbv231ayv0h" path="res://assets/music/komiku_opening.mp3" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 
@@ -23,3 +24,8 @@ texture = ExtResource("1_ig7tw")
 [node name="OreSprite5" type="Sprite2D" parent="."]
 position = Vector2(949, 15)
 texture = ExtResource("1_ig7tw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0xm2m")
+autoplay = true
+bus = &"Music"

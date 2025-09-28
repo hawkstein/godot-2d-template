@@ -1,25 +1,28 @@
 class_name DataModel
-extends Object
+extends RefCounted
 
-var meta:Dictionary[String, MetaData] = { }
+var property_updated:Callable
 
 func to_dict() -> Dictionary:
-	var props = self.get_property_list()
+	var props = get_property_list()
 	var dict: Dictionary = { }
 	
 	for p in props:
-		if not p.name == "meta" and p.usage == PROPERTY_USAGE_SCRIPT_VARIABLE:
+		if p.usage == PROPERTY_USAGE_SCRIPT_VARIABLE and not p.name == "property_updated":
 			dict[p.name] = get(p.name)
-		
+	
 	return dict
 
 func from_dict(dict: Dictionary):
 	var props = get_property_list()
 	
 	for p in props:
-		if p.usage == PROPERTY_USAGE_SCRIPT_VARIABLE and dict.has(p.name):
-			var value = dict[p.name]
-			set(p.name, value)
+		if dict.has(p.name):
+			set(p.name, dict[p.name])
 
-class MetaData:
-	var input := "Slider"
+
+func update(value:Variant, property_name:StringName) -> void:
+	print("Update {0} to {1}".format([property_name, value]))
+	set(property_name, value)
+	if property_updated:
+		property_updated.call(property_name)
