@@ -41,7 +41,6 @@ theme_override_constants/margin_bottom = 20
 metadata/_edit_lock_ = true
 
 [node name="StartVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
@@ -74,6 +73,7 @@ text = "Credits
 "
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
@@ -120,4 +120,5 @@ text = "Back to main menu"
 
 [connection signal="pressed" from="MarginContainer/StartVBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/StartVBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/StartVBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/OptionsVBoxContainer/Button" to="." method="_on_back_button_pressed"]

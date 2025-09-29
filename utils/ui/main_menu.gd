@@ -25,3 +25,7 @@ func _on_options_button_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	start_container.show()
 	options_container.hide()
+
+
+func _on_credits_button_pressed() -> void:
+	ScreenChanger.change_to("credits")
