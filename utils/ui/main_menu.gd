@@ -6,6 +6,8 @@ func _ready() -> void:
 	var builder := UIBuilder.new()
 	var audio_section = builder.build_section_from_model(DataStore.get_model("Audio"))
 	options_container.add_child(audio_section)
+	var gameplay_section = builder.build_section_from_model(DataStore.get_model("Gameplay"))
+	options_container.add_child(gameplay_section)
 
 
 func _on_start_button_pressed() -> void:

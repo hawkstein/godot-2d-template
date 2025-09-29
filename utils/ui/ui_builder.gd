@@ -13,9 +13,10 @@ func _build_inputs(data_model:DataModel) -> Array[Control]:
 	var nodes:Array[Control] = []
 	for p in props:
 		if p.usage == PROPERTY_USAGE_SCRIPT_VARIABLE:
-			var p_label = data_model.get_meta(p.name, "404")
 			if p.type == Variant.Type.TYPE_FLOAT:
-				nodes.append(_build_slider(p_label, data_model.get(p.name), data_model.update.bind(p.name)))
+				nodes.append(_build_slider(p.name, data_model))
+			if p.type == Variant.Type.TYPE_BOOL:
+				nodes.append(_build_toggle(p.name, data_model))
 	return nodes
 
 
@@ -38,16 +39,27 @@ func _build_section(section_title:String, child_nodes:Array[Control]) -> PanelCo
 	return section
 
 
-func _build_slider(label_text:String, slider_value:float, callable:Callable) -> HBoxContainer:
+func _build_slider(prop_name:String, data_model:DataModel) -> HBoxContainer:
+	var prop_meta = data_model.get_meta(prop_name)
 	var container = HBoxContainer.new()
 	var label = Label.new()
-	label.text = label_text
+	label.text = prop_meta.label
 	container.add_child(label)
 	var slider = HSlider.new()
-	slider.max_value = 1.0
-	slider.step = 0.05
-	slider.value = slider_value
-	slider.value_changed.connect(callable)
+	slider.min_value = prop_meta.min_value
+	slider.max_value = prop_meta.max_value
+	slider.step = prop_meta.step
+	slider.value = data_model.get(prop_name)
+	slider.value_changed.connect( data_model.update.bind(prop_name) )
 	slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	container.add_child(slider)
 	return container
+
+func _build_toggle(prop_name:String, data_model:DataModel) -> CheckBox:
+	var prop_meta = data_model.get_meta(prop_name)
+	var toggle = CheckBox.new()
+	toggle.text = prop_meta.label
+	toggle.button_pressed = data_model.get(prop_name)
+	toggle.toggled.connect( data_model.update.bind(prop_name) )
+	toggle.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	return toggle

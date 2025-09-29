@@ -25,3 +25,20 @@ func update(value:Variant, property_name:StringName) -> void:
 	print("Update {0} to {1}".format([property_name, value]))
 	set(property_name, value)
 	property_updated.emit(property_name)
+
+
+class PropertyMeta:
+	var label:String
+	func _init(p_label:String):
+		label = p_label
+
+class SliderMeta extends PropertyMeta:
+	var min_value:float
+	var max_value:float
+	var step:float
+	func _init(p_label:String, p_min = 0.0, p_max = 1.0, p_step = 0.05):
+		super._init(p_label)
+		min_value = p_min
+		max_value = p_max
+		step = p_step
+		

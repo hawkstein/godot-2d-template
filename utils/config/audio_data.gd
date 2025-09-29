@@ -18,6 +18,6 @@ var music_volume := 1.0:
 
 func _init() -> void:
 	set_meta("title", "Audio")
-	set_meta("master_volume", "Master")
-	set_meta("sfx_volume", "SFX")
-	set_meta("music_volume", "Music")
+	set_meta("master_volume", SliderMeta.new("Master"))
+	set_meta("sfx_volume", SliderMeta.new("SFX"))
+	set_meta("music_volume", SliderMeta.new("Music"))
