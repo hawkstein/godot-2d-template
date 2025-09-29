@@ -6,7 +6,7 @@
 
 [node name="ScreenChanger" type="Node2D"]
 script = ExtResource("1_ahmay")
-screens = Dictionary[String, PackedScene]({
-"main": ExtResource("3_0ty40"),
-"main_menu": ExtResource("2_stj24")
+screens = Dictionary[StringName, PackedScene]({
+&"main": ExtResource("3_0ty40"),
+&"main_menu": ExtResource("2_stj24")
 })

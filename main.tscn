@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://vck4bl5wwflb"]
+[gd_scene load_steps=4 format=3 uid="uid://vck4bl5wwflb"]
 
+[ext_resource type="Script" uid="uid://omkrdyrq3u73" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://j3e3l0qkph8h" path="res://entities/Ore.png" id="1_ig7tw"]
 [ext_resource type="AudioStream" uid="uid://cbbv231ayv0h" path="res://assets/music/komiku_opening.mp3" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_h2yge")
 
 [node name="OreSprite" type="Sprite2D" parent="."]
 position = Vector2(477, 253)

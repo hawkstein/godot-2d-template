@@ -8,6 +8,9 @@ func _ready() -> void:
 	options_container.add_child(audio_section)
 	var gameplay_section = builder.build_section_from_model(DataStore.get_model("Gameplay"))
 	options_container.add_child(gameplay_section)
+	
+	start_container.show()
+	options_container.hide()
 
 
 func _on_start_button_pressed() -> void:
@@ -17,3 +20,8 @@ func _on_start_button_pressed() -> void:
 func _on_options_button_pressed() -> void:
 	start_container.hide()
 	options_container.show()
+
+
+func _on_back_button_pressed() -> void:
+	start_container.show()
+	options_container.hide()

@@ -41,6 +41,7 @@ theme_override_constants/margin_bottom = 20
 metadata/_edit_lock_ = true
 
 [node name="StartVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
@@ -52,7 +53,6 @@ stretch_mode = 3
 
 [node name="InstructionsButton" type="Button" parent="MarginContainer/StartVBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.63969857, 0.98767596, 0.37410963, 1)
 text = "Instructions"
 
 [node name="StartButton" type="Button" parent="MarginContainer/StartVBoxContainer"]
@@ -74,12 +74,16 @@ text = "Credits
 "
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
+[node name="OptionsLabel" type="Label" parent="MarginContainer/OptionsVBoxContainer"]
+layout_mode = 2
+text = "Options"
+
 [node name="Section" type="PanelContainer" parent="MarginContainer/OptionsVBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_vertical = 3
@@ -110,5 +114,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Toggle"
 
+[node name="Button" type="Button" parent="MarginContainer/OptionsVBoxContainer"]
+layout_mode = 2
+text = "Back to main menu"
+
 [connection signal="pressed" from="MarginContainer/StartVBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/StartVBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/OptionsVBoxContainer/Button" to="." method="_on_back_button_pressed"]
