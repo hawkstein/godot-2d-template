@@ -18,7 +18,7 @@ func _init() -> void:
 func _ready() -> void:
 	for key in data:
 		_load_model(key)
-		data[key].property_updated = save_data_debounced.bind(key)
+		data[key].property_updated.connect(save_data_debounced.bind(key))
 
 func get_model(key:StringName) -> DataModel:
 	return data[key]
