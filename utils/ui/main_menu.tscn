@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfn6sijy2qq8n"]
+[gd_scene load_steps=5 format=3 uid="uid://dfn6sijy2qq8n"]
 
 [ext_resource type="Texture2D" uid="uid://4iakeclf4k4b" path="res://utils/ui/menu-header.png" id="1_1anft"]
 [ext_resource type="Script" uid="uid://dqn7tfj4acgyi" path="res://utils/ui/main_menu.gd" id="1_wyq4t"]
 [ext_resource type="Theme" uid="uid://bes7poiouimn8" path="res://utils/ui/default_theme.tres" id="1_xp5nu"]
+[ext_resource type="PackedScene" uid="uid://bn3asyl3o2i63" path="res://utils/ui/fancy_button.tscn" id="4_8naov"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -50,11 +51,7 @@ layout_mode = 2
 texture = ExtResource("1_1anft")
 stretch_mode = 3
 
-[node name="InstructionsButton" type="Button" parent="MarginContainer/StartVBoxContainer"]
-layout_mode = 2
-text = "Instructions"
-
-[node name="StartButton" type="Button" parent="MarginContainer/StartVBoxContainer"]
+[node name="StartButton" parent="MarginContainer/StartVBoxContainer" instance=ExtResource("4_8naov")]
 layout_mode = 2
 text = "Start"
 
