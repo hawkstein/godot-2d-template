@@ -3,22 +3,26 @@
 [ext_resource type="FontFile" uid="uid://bk4j1idfh85sp" path="res://assets/fonts/Silver.ttf" id="1_os6be"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht4lr"]
-content_margin_top = 10.0
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os6be"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-expand_margin_bottom = 2.0
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os6be"]
-content_margin_top = 8.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 6
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfpka"]
@@ -33,6 +37,7 @@ thickness = 8
 [resource]
 default_font = ExtResource("1_os6be")
 default_font_size = 38
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/styles/hover = SubResource("StyleBoxFlat_ht4lr")
 Button/styles/normal = SubResource("StyleBoxFlat_os6be")
 Button/styles/pressed = SubResource("StyleBoxFlat_os6be")
