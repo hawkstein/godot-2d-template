@@ -18,11 +18,16 @@ func from_dict(dict: Dictionary):
 	
 	for p in props:
 		if dict.has(p.name):
-			set(p.name, dict[p.name])
+			if p.type == Variant.Type.TYPE_ARRAY:
+				var typed_array:Array[String] = []
+				typed_array.assign(dict[p.name])
+				set(p.name, typed_array)
+			else:
+				set(p.name, dict[p.name])
 
 
 func update(value:Variant, property_name:StringName) -> void:
-	print("Update {0} to {1}".format([property_name, value]))
+	#print("Update {0} to {1}".format([property_name, value]))
 	set(property_name, value)
 	property_updated.emit(property_name)
 

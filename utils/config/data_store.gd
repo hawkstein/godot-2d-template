@@ -30,7 +30,6 @@ func save_game_data() -> void:
 
 
 func save_data(key:StringName) -> void:
-	print("saved data for ", key)
 	var data_dict = data[key].to_dict()
 	var json_string := JSON.stringify(data_dict)
 	var model_path = SAVE_PATH.format([key])
@@ -44,7 +43,6 @@ func save_data(key:StringName) -> void:
 	file_access.close()
 
 func save_data_debounced(_property_name:StringName, key: StringName):
-	print("debounce for", key)
 	if not key in debounce_timers:
 		_create_debounce_timer(key)
 	var timer = debounce_timers[key]

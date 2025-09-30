@@ -42,6 +42,7 @@ theme_override_constants/margin_bottom = 20
 metadata/_edit_lock_ = true
 
 [node name="StartVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
@@ -70,49 +71,102 @@ text = "Credits
 "
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-visible = false
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
 [node name="OptionsLabel" type="Label" parent="MarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="Section" type="PanelContainer" parent="MarginContainer/OptionsVBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(400, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/OptionsVBoxContainer/Section"]
+[node name="First" type="Control" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/First"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/First/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/OptionsVBoxContainer/Section/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/First/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/OptionsVBoxContainer/Section/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/First/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 0
-text = "Section Title"
+text = "Section"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/OptionsVBoxContainer/Section/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/OptionsVBoxContainer/Section/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Second" type="Control" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Toggle"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Second"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Second/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Second/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Second/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Section"
+
+[node name="Third" type="Control" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Third"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Third/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Third/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/OptionsVBoxContainer/HBoxContainer/Third/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Section"
 
 [node name="Button" type="Button" parent="MarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Back to main menu"
 
 [connection signal="pressed" from="MarginContainer/StartVBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
