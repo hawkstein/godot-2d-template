@@ -5,18 +5,21 @@ var up_events:Array[String] = ["W", "UP"]
 var down_events:Array[String] = ["S", "DOWN"]
 var left_events:Array[String] = ["A", "LEFT"]
 var right_events:Array[String] = ["D", "RIGHT"]
+var pause_events:Array[String] = ["P"]
 
 func _init() -> void:
+	InputMap.add_action("Up")
+	InputMap.add_action("Down")
+	InputMap.add_action("Left")
+	InputMap.add_action("Right")
+	InputMap.add_action("Pause")
+	
 	set_meta("title", "Input")
 	set_meta("up_events", PropertyMeta.new("Up"))
 	set_meta("down_events", PropertyMeta.new("Down"))
 	set_meta("left_events", PropertyMeta.new("Left"))
 	set_meta("right_events", PropertyMeta.new("Right"))
-	
-	InputMap.add_action("Up")
-	InputMap.add_action("Down")
-	InputMap.add_action("Left")
-	InputMap.add_action("Right")
+	set_meta("pause_events", PropertyMeta.new("Pause"))
 
 func from_dict(dict:Dictionary) -> void:
 	super.from_dict(dict)
