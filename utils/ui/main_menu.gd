@@ -32,3 +32,7 @@ func _on_back_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	ScreenChanger.change_to("credits")
+
+
+func _on_scores_button_pressed() -> void:
+	ScreenChanger.change_to("scores")
